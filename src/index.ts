@@ -16,9 +16,9 @@ class Controller {
     }
     async add(fn: Function, rollback: Function) {
         try {
-            this.stacks.unshift(rollback)
 
             let ret = await fn()
+            this.stacks.unshift(rollback)
 
             return ret
         } catch (e: any) {

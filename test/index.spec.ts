@@ -31,7 +31,7 @@ test('rollback in scope', async () => {
     })).toHaveProperty("message", "error");
     expect(fn).toHaveBeenCalledTimes(1)
 
-    expect(rollback).toHaveBeenCalledTimes(3)
+    expect(rollback).toHaveBeenCalledTimes(2)
 
     expect(await scope(async (r) => {
         fn()
@@ -42,7 +42,7 @@ test('rollback in scope', async () => {
     })).toBeTruthy()
     expect(fn).toHaveBeenCalledTimes(2)
 
-    expect(rollback).toHaveBeenCalledTimes(4)
+    expect(rollback).toHaveBeenCalledTimes(2)
 
 
 })
