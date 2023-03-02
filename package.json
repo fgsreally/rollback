@@ -11,6 +11,7 @@
     "test": "vitest"
   },
   "keywords": [],
+  "files":["dist"],
   "author": "",
   "license": "MIT",
   "devDependencies": {
