@@ -31,7 +31,7 @@ class Controller {
             await fn(e)
         }
     }
-    async  r<C extends (...args: any) => Promise<any> | any>(fn: C, rollback: (args: Error) => any): Promise<Awaited<ReturnType<C>> > {
+    async  r<C extends (...args: any) => Promise<any> | any>(fn: C, rollback: (args: Error) => any=()=>{}): Promise<Awaited<ReturnType<C>> > {
 
         if (this.isActive) {
             return this.add(fn, rollback)
